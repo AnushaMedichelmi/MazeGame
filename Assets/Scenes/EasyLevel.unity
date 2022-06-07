@@ -2842,6 +2842,10 @@ PrefabInstance:
       propertyPath: gameOverPanel
       value: 
       objectReference: {fileID: 1843062831}
+    - target: {fileID: 8484660961894430694, guid: 99bfaf896a632be43bfebb9b0556b88e, type: 3}
+      propertyPath: trophyParticle
+      value: 
+      objectReference: {fileID: 9172111141267887626, guid: acfddc636e8c55f42bf6a2b3b5bcc2b2, type: 3}
     - target: {fileID: 8484660961894430700, guid: 99bfaf896a632be43bfebb9b0556b88e, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2913,3 +2917,64 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97d872849af1e8641b5c119ba66af371, type: 3}
+--- !u!1001 &9173673238578318478
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 9169375004875180394, guid: acfddc636e8c55f42bf6a2b3b5bcc2b2, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169375004875180394, guid: acfddc636e8c55f42bf6a2b3b5bcc2b2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169375004875180394, guid: acfddc636e8c55f42bf6a2b3b5bcc2b2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169375004875180394, guid: acfddc636e8c55f42bf6a2b3b5bcc2b2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169375004875180394, guid: acfddc636e8c55f42bf6a2b3b5bcc2b2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169375004875180394, guid: acfddc636e8c55f42bf6a2b3b5bcc2b2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169375004875180394, guid: acfddc636e8c55f42bf6a2b3b5bcc2b2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169375004875180394, guid: acfddc636e8c55f42bf6a2b3b5bcc2b2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169375004875180394, guid: acfddc636e8c55f42bf6a2b3b5bcc2b2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169375004875180394, guid: acfddc636e8c55f42bf6a2b3b5bcc2b2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169375004875180394, guid: acfddc636e8c55f42bf6a2b3b5bcc2b2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172111141267887626, guid: acfddc636e8c55f42bf6a2b3b5bcc2b2, type: 3}
+      propertyPath: m_Name
+      value: CFX4 Aura Bubble C
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172111141267887626, guid: acfddc636e8c55f42bf6a2b3b5bcc2b2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: acfddc636e8c55f42bf6a2b3b5bcc2b2, type: 3}

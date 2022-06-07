@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     Button playAgain;
     bool isGameOver;
+
+    public GameObject trophyParticle;
     // Start is called before the first frame update
     void Start()
     {
@@ -73,9 +75,11 @@ public class PlayerMovement : MonoBehaviour
         }
         if(collision.gameObject.tag=="End")
         {
+           Instantiate(trophyParticle,collision.gameObject.transform.position,Quaternion.identity);
+           
             anim.SetBool("isWon", true);
             StartCoroutine("WaitToLoad");
-            gameOverPanel.SetActive(true);
+            //gameOverPanel.SetActive(true);
             
         }
     }
@@ -86,6 +90,7 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator  WaitToLoad()
     {
         yield return new WaitForSeconds(5f);
+        gameOverPanel.SetActive(true);
     }
 }
 
