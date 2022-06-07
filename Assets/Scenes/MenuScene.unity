@@ -560,7 +560,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 96, y: -26.9}
+  m_AnchoredPosition: {x: 108, y: -26.9}
   m_SizeDelta: {x: 335.9556, y: 112.3017}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &350876558
@@ -596,7 +596,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Level1
+  m_Text: Easy
 --- !u!222 &350876559
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -699,7 +699,7 @@ GameObject:
   - component: {fileID: 430723131}
   - component: {fileID: 430723130}
   m_Layer: 5
-  m_Name: Level1Button
+  m_Name: EasyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2186,7 +2186,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 88, y: -26.9}
+  m_AnchoredPosition: {x: 114, y: -26.9}
   m_SizeDelta: {x: 335.9556, y: 112.3017}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1536616157
@@ -2222,9 +2222,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Level3
-
-'
+  m_Text: Hard
 --- !u!222 &1536616158
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2327,7 +2325,7 @@ GameObject:
   - component: {fileID: 1578903441}
   - component: {fileID: 1578903440}
   m_Layer: 5
-  m_Name: Level2Button
+  m_Name: MediumButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2350,8 +2348,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6, y: 63}
-  m_SizeDelta: {x: 193.9139, y: 61.0478}
+  m_AnchoredPosition: {x: -9.6117, y: 64.261}
+  m_SizeDelta: {x: 200.9611, y: 63.57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1578903440
 MonoBehaviour:
@@ -2889,7 +2887,7 @@ GameObject:
   - component: {fileID: 1972528157}
   - component: {fileID: 1972528156}
   m_Layer: 5
-  m_Name: Level3Button
+  m_Name: HardButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3159,7 +3157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 95, y: -26.9}
+  m_AnchoredPosition: {x: 85, y: -26.9}
   m_SizeDelta: {x: 335.9556, y: 112.3017}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2049909358
@@ -3195,9 +3193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Level2
-
-'
+  m_Text: Medium
 --- !u!222 &2049909359
 CanvasRenderer:
   m_ObjectHideFlags: 0

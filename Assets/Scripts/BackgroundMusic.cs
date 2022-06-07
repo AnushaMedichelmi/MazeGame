@@ -11,7 +11,7 @@ public class BackgroundMusic : MonoBehaviour
         if(backgroundMusic == null)
         {
             backgroundMusic = this;
-            DontDestroyOnLoad(backgroundMusic);
+            DontDestroyOnLoad(backgroundMusic);  // Do not destroy the target object when loading a new scene
         }
         else
         {
