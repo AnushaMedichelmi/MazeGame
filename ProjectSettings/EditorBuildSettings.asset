@@ -9,12 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuScene.unity
     guid: 785456d540b662c4ca3a536e35885293
   - enabled: 1
-    path: Assets/Scenes/EasyLevel.unity
-    guid: e63417dcc23105246a7e4cce91d80b28
+    path: Assets/Scenes/EasyLevelTileMapp.unity
+    guid: 021f4b43689d45e4499917b526f0f533
   - enabled: 1
-    path: Assets/Scenes/MediumLevel.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/MediumLevelTileMap.unity
+    guid: 079d2228c2e619449886d7a43563319f
   - enabled: 1
-    path: Assets/Scenes/DifficultLevel.unity
-    guid: a38bde5361c07a141b4bd7999a5fe8b6
+    path: Assets/Scenes/HardLevelTileMap.unity
+    guid: e2641d7e09dfaba4bbd1cb5c1f1cf896
   m_configObjects: {}

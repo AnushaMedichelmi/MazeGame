@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     Button playAgain;
     [SerializeField]
+    Button back;
+    [SerializeField]
     GameObject gameOverPanel;
     #endregion
 
@@ -46,6 +48,8 @@ public class GameManager : MonoBehaviour
     {
         gameOverPanel.SetActive(false);
         playAgain.onClick.AddListener(PlayAgain);
+        back.onClick.AddListener(Back);
+
     }
     private void Update()
     {
@@ -67,11 +71,20 @@ public class GameManager : MonoBehaviour
     #endregion
     public void PlayAgain()
     {
-        SceneManager.LoadScene(1);
+        //SceneManager.LoadScene();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-    IEnumerator WaitToLoad()
+
+    public void Back()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+        IEnumerator WaitToLoad()
     {
         yield return new WaitForSeconds(5f);
         gameOverPanel.SetActive(true);
     }
+
+
 }
