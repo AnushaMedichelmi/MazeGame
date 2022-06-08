@@ -6,91 +6,79 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField]
-    GameObject gameOverPanel;
+
     SpriteRenderer sprite;
     int playerSpeed = 3;
-    [SerializeField]
-    Text scoreText;
     int score;
     Animator anim;
     [SerializeField]
-    Button playAgain;
+
     bool isGameOver;
 
     public GameObject trophyParticle;
+    [SerializeField] private AudioSource coinEffect;
     // Start is called before the first frame update
     void Start()
     {
-       sprite = GetComponent<SpriteRenderer>();
+        sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-        gameOverPanel.SetActive(false);
-        playAgain.onClick.AddListener(PlayAgain);
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-            float inputX = Input.GetAxis("Horizontal") * playerSpeed * Time.deltaTime;
-            float inputY = Input.GetAxis("Vertical") * playerSpeed * Time.deltaTime;
+        float inputX = Input.GetAxis("Horizontal") * playerSpeed * Time.deltaTime;
+        float inputY = Input.GetAxis("Vertical") * playerSpeed * Time.deltaTime;
 
-       
-            transform.Translate(inputX, inputY, 0);
-        
+
+        transform.Translate(inputX, inputY, 0);
+
         if (inputX < 0)
-            {
-            
+        {
+
             sprite.flipX = true;
-            }
-            if (inputX > 0)
-            {
-           
+        }
+        if (inputX > 0)
+        {
+
             sprite.flipX = false;
-            }
-            if(inputY > 0||inputX>0||inputX<0||inputY<0)
+        }
+        if (inputY > 0 || inputX > 0 || inputX < 0 || inputY < 0)
         {
             anim.SetBool("isIdle", false);
         }
-            else if(inputY ==0||inputX==0)
+        else if (inputY == 0 || inputX == 0)
         {
             anim.SetBool("isIdle", true);
         }
 
     }
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)   //Detects Collisions
     {
-        if(collision.gameObject.tag=="Enemy")
+        if (collision.gameObject.tag == "Enemy")
         {
-            gameOverPanel.SetActive(true);
+            GameManager.Instance.GameOver();
+            this.gameObject.SetActive(false);
         }
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag=="Cherry")
+        if (collision.gameObject.tag == "Cherry")
         {
-            score = score + 10;
-            scoreText.text = "Score:" + score;
+
+            coinEffect.Play();
+            GameManager.Instance.UpdateScore(10);
+
             collision.gameObject.SetActive(false);
         }
-        if(collision.gameObject.tag=="End")
+        if (collision.gameObject.tag == "End")
         {
-           Instantiate(trophyParticle,collision.gameObject.transform.position,Quaternion.identity);
-           
+
+            Instantiate(trophyParticle,collision.gameObject.transform.position,Quaternion.identity);
             anim.SetBool("isWon", true);
-            StartCoroutine("WaitToLoad");
-            //gameOverPanel.SetActive(true);
-            
+            GameManager.Instance.GameOver();
         }
     }
-    public void PlayAgain()
-    {
-        SceneManager.LoadScene(1);
-    }
-    IEnumerator  WaitToLoad()
-    {
-        yield return new WaitForSeconds(5f);
-        gameOverPanel.SetActive(true);
-    }
-}
 
+}
