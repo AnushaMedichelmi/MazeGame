@@ -8,9 +8,16 @@ public class SoundManager : MonoBehaviour
 {
      
     [SerializeField] Slider Slider;                      //To serialize a private field
+    [SerializeField] Button Sound;
+    [SerializeField] Image soundIcon;
+    [SerializeField] Image soundOffIcon;
+    bool muted=false;
     // Start is called before the first frame update
     void Start()
     {
+        soundIcon.enabled = true;
+        soundOffIcon.enabled = false;
+        Sound.onClick.AddListener(MuteOrUnMute);
         if(!PlayerPrefs.HasKey("musicvolume"))            //playerprefs stores and access player preferences between game sessions
         {
             PlayerPrefs.SetFloat("musicvolume",1);              //Intially the volume will be 100%
@@ -40,6 +47,23 @@ public class SoundManager : MonoBehaviour
         //It stores the value of volume slider into the "musicvolume" key name
         PlayerPrefs.SetFloat("musicvolume", Slider.value);    
 
+    }
+    private void MuteOrUnMute()
+    {
+        if(muted==false)
+        {
+            muted = true;
+            soundOffIcon.enabled = true;
+            soundIcon.enabled = false;
+            AudioListener.pause = true;
+        }
+        else
+        {
+            muted = false;
+            soundIcon.enabled = true;
+            soundOffIcon.enabled=false;
+            AudioListener.pause=false;
+        }
     }
 
 }

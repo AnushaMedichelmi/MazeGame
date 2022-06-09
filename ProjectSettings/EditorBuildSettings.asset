@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/EasyLevelTileMapp.unity
     guid: 021f4b43689d45e4499917b526f0f533
   - enabled: 1
-    path: Assets/Scenes/MediumLevelTileMap.unity
-    guid: 079d2228c2e619449886d7a43563319f
+    path: Assets/Scenes/MediumLevel.unity
+    guid: e1dc2a09d2dd22f49a21e5bf74b04f18
   - enabled: 1
     path: Assets/Scenes/HardLevelTileMap.unity
     guid: e2641d7e09dfaba4bbd1cb5c1f1cf896

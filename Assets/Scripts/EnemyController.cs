@@ -5,13 +5,15 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    public enum STATE { LOOKFOR, GOTO };
+    public enum STATE { LOOKFOR, GOTO , ATTACK};
     public STATE currentState = STATE.LOOKFOR;
     public float gotoDistance;
     public Transform target;
     Vector3 startPosition;
     Animator animator;
     NavMeshAgent agent;
+    float time;
+    float attackDistance = 3f;
     // Start is called before the first frame update
     IEnumerator Start()
     {
@@ -32,6 +34,9 @@ public class EnemyController : MonoBehaviour
                         break;
                     case STATE.GOTO:
                         Goto();
+                        break;
+                    case STATE.ATTACK:
+                        Attack();
                         break;
                     default:
                         break;
@@ -67,18 +72,44 @@ public class EnemyController : MonoBehaviour
     public void Goto()
     {
         animator.SetBool("isIdle", false);
-        if (PlayerDistance() < 3f)
+        if (PlayerDistance() > attackDistance)
         {
             agent.SetDestination(target.position);
             transform.eulerAngles = Vector3.zero;
             // transform.position = Vector3.MoveTowards(transform.position, target.transform.position, 1*Time.deltaTime);
         }
-
-        else
+        if(PlayerDistance() >gotoDistance)
         {
-            currentState = STATE.LOOKFOR;
+            currentState=STATE.LOOKFOR;
+        }
+
+        else if(PlayerDistance() < attackDistance)
+        {
+            currentState = STATE.ATTACK;
         }
         print("This is GotoState");
+    }
+    public void Attack()
+    {
+        print("This is AttackState");
+        transform.eulerAngles = Vector3.zero;
+        time = time + Time.deltaTime;
+        if (target.GetComponent<PlayerMovement>().isGameOver!=true)
+        {
+            if (time > 0.5f)
+            {
+                // GameObject tempBullet = Instantiate(bullet,this.transform.position,Quaternion.identity);
+                GameObject tempBullet = PoolManager.instance.GetObjectsFromPool("Bullet");
+                tempBullet.SetActive(true);
+                tempBullet.transform.position = this.transform.position;
+                time = 0;
+
+            }
+        }
+        if (PlayerDistance() > attackDistance)
+        {
+            currentState = STATE.GOTO;
+        }
     }
 
 

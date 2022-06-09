@@ -7,14 +7,17 @@ TagManager:
   - Enemy
   - Cherry
   - End
+  - FxTemporaire
+  - Bullet
+  - PowerUp
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
+  - Bullet
   - 
   - 
   - 
