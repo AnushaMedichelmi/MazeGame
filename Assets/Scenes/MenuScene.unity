@@ -3006,9 +3006,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: In this Game, Player came for a treasure.The treasure is at one of the
-    end.Player has to travel  through the maze by avoiding the enemies coming in
-    between and Collect the treasure.
+  m_Text: In this Game, Player has to find  the treasure.Player has to travel  through
+    the maze by avoiding the enemies coming in between and Collect the treasure.
 --- !u!222 &1360439711
 CanvasRenderer:
   m_ObjectHideFlags: 0

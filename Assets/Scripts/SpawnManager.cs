@@ -5,7 +5,9 @@ using UnityEngine.AI;
 
 public class SpawnManager : MonoBehaviour
 {
-    #region PUBLIC VARIABLES
+    #region PUBLIC VARIABLES
+    #endregion
+    #region PRIVATE VARIABLES
     [SerializeField]                    //To serialize a private field
     GameObject[] itemsToPickFrom;      
     [SerializeField]
@@ -20,13 +22,17 @@ public class SpawnManager : MonoBehaviour
     GameObject powerUp;
     //  bool isPowerUp = false;
     int count = 0;
-    #endregion
-    private void Start()
+    #endregion
+    #region MONOBEHAVIOUR METHODS
+    private void Start()
     {
         SpawnCherries();         
         SpawnPowerUp();          
     }
-
+    #endregion
+    #region PUBLIC METHODS
+    #endregion
+    #region PRIVATE METHODS
     void SpawnPowerUp()
     {
         while (count==0)         
@@ -77,7 +83,7 @@ public class SpawnManager : MonoBehaviour
         int randomIndex = Random.Range(0, itemsToPickFrom.Length);
         GameObject cherry = Instantiate(itemsToPickFrom[randomIndex], spawnPosition, spawnRotation);
     }
-
+    #endregion
 }
 
 

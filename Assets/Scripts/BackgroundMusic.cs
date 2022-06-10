@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class BackgroundMusic : MonoBehaviour
 {
+    #region PUBLIC VARIABLES
+    #endregion
+    #region PRIVATE VARIABLES
     private static BackgroundMusic backgroundMusic;
-
-     void Awake()
+    #endregion
+    #region MONOBEHAVIOUR METHODS
+    void Awake()
     {
         if(backgroundMusic == null)
         {
@@ -18,4 +22,9 @@ public class BackgroundMusic : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    #endregion
+    #region PUBLIC METHODS
+    #endregion
+    #region PRIVATE METHODS
+    #endregion
 }

@@ -6,21 +6,22 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-
+    #region PUBLIC VARIABLES
     SpriteRenderer sprite;         //Renders a sprite for 2d graphics
-   public int playerSpeed = 3;      //variable for playerspeed
-    int score;                       //declaring variable score
-    Animator anim;                    //Declaring animator
-    [SerializeField]                 //Used to serialize a private field
-
+    public int playerSpeed = 3;      //variable for playerspeed
     public bool isGameOver;
 
     public GameObject trophyParticle;              //Declaring a particle effect for trophy
 
     public GameObject powerUpParticle;             //Declaring a particle effect for powerup
 
-
+    #endregion
+    #region PRIVATE VARIABLES
+    int score;                       //declaring variable score
+    Animator anim;                    //Declaring animator
     [SerializeField] private AudioSource coinEffect;    //Declaring audio source
+    #endregion
+    #region MONOBEHAVIOUR METHODS
     // Start is called before the first frame update
     void Start()
     {
@@ -59,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
+   
     public void OnCollisionEnter2D(Collision2D collision)   //Detects Collisions
     {
         if (collision.gameObject.tag == "Enemy")          //if player collides with enemy
@@ -105,7 +107,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
-
+    #endregion
+    #region PUBLIC METHODS
     public void PowerUpCollected(GameObject temp)
     {
          temp.SetActive(false);
@@ -129,5 +132,8 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
+    #endregion
+    #region PRIVATE METHODS
+    #endregion
 
 }

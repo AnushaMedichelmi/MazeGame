@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
         playAgain.onClick.AddListener(PlayAgain);   //calling the playagain method
         back.onClick.AddListener(Back);              //calling the back method
         nextLevel.onClick.AddListener(NextLevel);    //method nextlevel
+        
 
     }
     private void Update()
@@ -70,6 +71,7 @@ public class GameManager : MonoBehaviour
     }
     public void GameOver()
     {
+       
         //Start coroutine:delay execution of a function 
         StartCoroutine("WaitToLoad");   //dealy for sometime before gameover is displayed
 
@@ -78,6 +80,7 @@ public class GameManager : MonoBehaviour
     #endregion
     public void PlayAgain()
     {
+       
         //SceneManager.LoadScene();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);    //loading active scene or current scene
     }
@@ -88,6 +91,7 @@ public class GameManager : MonoBehaviour
     }
    public void NextLevel()
     {
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);   //loading the next scene
     }
 

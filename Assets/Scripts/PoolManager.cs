@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class PoolManager : MonoBehaviour
 {
+    #region PUBLIC VARIABLES
+   
+
     [SerializeField]
     public static PoolManager instance;
     [SerializeField]
     public List<GameObject> pool = new List<GameObject>();  //List of GameObject
     [SerializeField]
     public List<PoolObject> poolItems = new List<PoolObject>(); //List of poolObjects
+    #endregion
+    #region PRIVATE VARIABLES
+    #endregion
+    #region MONOBEHAVIOUR METHODS
     private void Awake()
     {
         if (instance == null)
@@ -18,6 +25,7 @@ public class PoolManager : MonoBehaviour
         }
         return;
     }
+   
     void Start()
     {
         AddToPool();    //Adding gameObjects to pool
@@ -27,8 +35,8 @@ public class PoolManager : MonoBehaviour
     {
 
     }
-
-    // Update is called once per frame
+    #endregion
+    #region PUBLIC METHODS
     public void AddToPool()
     {
         foreach (PoolObject item in poolItems)
@@ -67,4 +75,7 @@ public class PoolManager : MonoBehaviour
         public string name;
         public int amount;
     }
+    #endregion
+    #region PRIVATE METHODS
+    #endregion
 }

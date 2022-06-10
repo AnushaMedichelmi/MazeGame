@@ -65,5 +65,5 @@ public class SoundManager : MonoBehaviour
             AudioListener.pause=false;
         }
     }
-
-}
+     
+    }

@@ -262,7 +262,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &93662051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1177,10 +1177,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemsToPickFrom:
   - {fileID: 8698332304428702884, guid: 97d872849af1e8641b5c119ba66af371, type: 3}
-  gridX: 14
-  gridY: 7
+  gridX: 7
+  gridY: 4
   gridSpacingOffset: 1
-  gridOrigin: {x: -4, y: 0, z: 0}
+  gridOrigin: {x: -7, y: 0, z: 0}
   powerUp: {fileID: 8179902125842911129, guid: d1aeccc6e82e9ba4b83d4ea06ec17bda, type: 3}
 --- !u!1 &945752731
 GameObject:

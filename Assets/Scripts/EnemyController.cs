@@ -5,16 +5,21 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    public enum STATE { LOOKFOR, GOTO , ATTACK};
-    public STATE currentState = STATE.LOOKFOR;
-    public float gotoDistance;
+    #region PUBLIC VARIABLES
+    public enum STATE { LOOKFOR, GOTO , ATTACK};    //Different states
+    public STATE currentState = STATE.LOOKFOR;          //Current state
+    public float gotoDistance; 
     public Transform target;
+    #endregion
+    #region PRIVATE VARIABLES
     Vector3 startPosition;
     Animator animator;
     NavMeshAgent agent;
     float time;
     float attackDistance = 3f;
+    #endregion
     // Start is called before the first frame update
+    #region MONOBEHAVIOUR METHODS
     IEnumerator Start()
     {
 
@@ -29,33 +34,34 @@ public class EnemyController : MonoBehaviour
                 switch (currentState)
                 {
                     case STATE.LOOKFOR:
-                        LookFor();
+                        LookFor();     //calling Lookfor method
 
                         break;
                     case STATE.GOTO:
-                        Goto();
+                        Goto();         //calling goto method
                         break;
                     case STATE.ATTACK:
-                        Attack();
+                        Attack();        //calling attack method
                         break;
                     default:
                         break;
 
                 }
-                yield return null;
+                
             }
             else
                 break;
+            yield return null;
 
         }
 
     }
 
-
-    public void LookFor()
+    #endregion
+    #region PUBLIC METHODS
+    public void LookFor()           //LookFor Method
     {
-        animator.SetBool("isIdle", true);
-        agent.ResetPath();
+        animator.SetBool("isIdle", true);      
         transform.eulerAngles = Vector3.zero;
 
         if (PlayerDistance() < gotoDistance)
@@ -74,7 +80,7 @@ public class EnemyController : MonoBehaviour
         animator.SetBool("isIdle", false);
         if (PlayerDistance() > attackDistance)
         {
-            agent.SetDestination(target.position);
+            agent.SetDestination(target.position);  //setting player as atarget and to follow it
             transform.eulerAngles = Vector3.zero;
             // transform.position = Vector3.MoveTowards(transform.position, target.transform.position, 1*Time.deltaTime);
         }
@@ -99,8 +105,8 @@ public class EnemyController : MonoBehaviour
             if (time > 0.5f)
             {
                 // GameObject tempBullet = Instantiate(bullet,this.transform.position,Quaternion.identity);
-                GameObject tempBullet = PoolManager.instance.GetObjectsFromPool("Bullet");
-                tempBullet.SetActive(true);
+                GameObject tempBullet = PoolManager.instance.GetObjectsFromPool("Bullet");          //Bullet is taken from pool
+                tempBullet.SetActive(true);                                                         
                 tempBullet.transform.position = this.transform.position;
                 time = 0;
 
@@ -111,10 +117,12 @@ public class EnemyController : MonoBehaviour
             currentState = STATE.GOTO;
         }
     }
+    #endregion
 
-
+    #region PRIVATE METHODS
     private float PlayerDistance()
     {
-        return Vector3.Distance(target.transform.position, this.transform.position);
+        return Vector3.Distance(target.transform.position, this.transform.position);    //Calculating Distance from enemy and player
     }
+    #endregion
 }
