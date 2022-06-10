@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();               //we assign rigidbody by the variable
         Physics2D.IgnoreCollision(this.gameObject.GetComponent<Collider2D>(), GameObject.Find("Enemy").GetComponent<Collider2D>(), true);
-        Physics2D.IgnoreLayerCollision(6, 6);
+       // Physics2D.IgnoreLayerCollision(6, 6);
         target = GameObject.FindObjectOfType<PlayerMovement>();   //we assign target variable finding our playermovement 
         moveDirection = (target.transform.position - transform.position).normalized * moveSpeed;  //we calculate direction to target by subtraction target position and bullet postion resulting vector is normalized and multiplied by movespeed
         rb.velocity = new Vector2(moveDirection.x, moveDirection.y);    //setting velocity to bullets to move in particular direction
