@@ -65,16 +65,18 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")          //if player collides with enemy
         {
-            GameManager.Instance.GameOver();              //game over condition is called
+            GameManager.Instance.GameOver();    //gameover function is called
+            isGameOver = true;
             this.gameObject.SetActive(false);
-            isGameOver=true;
+            
         }
         if (collision.gameObject.tag == "Bullet")             //if player collides with bullet 
         {
-            GameManager.Instance.GameOver();                 //gameover function is called
-            this.gameObject.SetActive(false);
-            collision.gameObject.SetActive(false);
+            GameManager.Instance.GameOver();    //gameover function is called
             isGameOver = true;
+            this.gameObject.SetActive(false);
+            PoolManagerScript.Instance.Recycle("Bullet", collision.gameObject);
+            
         }
     }
 
@@ -88,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
             coinEffect.Play();                             //playing audio
             GameManager.Instance.UpdateScore(10);          //increasing score by 10
 
-            collision.gameObject.SetActive(false);         //making the cherry inactive
+            PoolManagerScript.Instance.Recycle("Cherries", collision.gameObject);
         }
         if (collision.gameObject.tag == "End")             //if player hits the trophy
         {

@@ -2915,6 +2915,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2067147520}
   - component: {fileID: 2067147521}
+  - component: {fileID: 2067147522}
   m_Layer: 0
   m_Name: PoolManager
   m_TagString: Untagged
@@ -2943,7 +2944,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2067147519}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 637029cd22faa7b43b0a583a80d46cc8, type: 3}
   m_Name: 
@@ -2953,6 +2954,23 @@ MonoBehaviour:
   - prefab: {fileID: 6402563268297134848, guid: 557b0a26f6a060e41bc834662368f827, type: 3}
     name: Bullet
     amount: 20
+--- !u!114 &2067147522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067147519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a400973e8efdc5746bdc04bd7f584292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabsToPool:
+  - prefab: {fileID: 8698332304428702884, guid: 97d872849af1e8641b5c119ba66af371, type: 3}
+    initialCapacity: 20
+  - prefab: {fileID: 6402563268297134848, guid: 557b0a26f6a060e41bc834662368f827, type: 3}
+    initialCapacity: 20
 --- !u!1 &2071698341
 GameObject:
   m_ObjectHideFlags: 0

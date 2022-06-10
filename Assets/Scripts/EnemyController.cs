@@ -56,6 +56,13 @@ public class EnemyController : MonoBehaviour
         }
 
     }
+    private void Update()
+    {
+        if(target.GetComponent<PlayerMovement>().isGameOver == true)
+        {
+            Reset();
+        }
+    }
 
     #endregion
     #region PUBLIC METHODS
@@ -104,9 +111,10 @@ public class EnemyController : MonoBehaviour
         {
             if (time > 0.5f)
             {
+                print("Ready To spawn bullet");
                 // GameObject tempBullet = Instantiate(bullet,this.transform.position,Quaternion.identity);
-                GameObject tempBullet = PoolManager.instance.GetObjectsFromPool("Bullet");          //Bullet is taken from pool
-                tempBullet.SetActive(true);                                                         
+                GameObject tempBullet = PoolManagerScript.Instance.Spawn("Bullet");          //Bullet is taken from pool
+                print(tempBullet + "bullet is taken");
                 tempBullet.transform.position = this.transform.position;
                 time = 0;
 
@@ -116,6 +124,12 @@ public class EnemyController : MonoBehaviour
         {
             currentState = STATE.GOTO;
         }
+    }
+    public void Reset()
+    {
+        animator.SetBool("isIdle", true);
+        this.transform.position = Vector2.zero;
+        
     }
     #endregion
 

@@ -70,7 +70,7 @@ public class SpawnManager : MonoBehaviour
                 }
                 if (hit.collider == null)
                 {
-                    PickAndSpawn(spawnPoint, Quaternion.identity);
+                    PickAndSpawn(spawnPoint);
                 }
 
 
@@ -78,10 +78,12 @@ public class SpawnManager : MonoBehaviour
             }
         }
     }
-    void PickAndSpawn(Vector3 spawnPosition, Quaternion spawnRotation)
+    void PickAndSpawn(Vector3 spawnPosition)
     {
-        int randomIndex = Random.Range(0, itemsToPickFrom.Length);
-        GameObject cherry = Instantiate(itemsToPickFrom[randomIndex], spawnPosition, spawnRotation);
+        // int randomIndex = Random.Range(0, itemsToPickFrom.Length);
+        GameObject tempCherry = PoolManagerScript.Instance.Spawn("Cherries");
+       // tempCherry.SetActive(true);
+        tempCherry.transform.position= new Vector3( spawnPosition.x,spawnPosition.y,0f);
     }
     #endregion
 }
