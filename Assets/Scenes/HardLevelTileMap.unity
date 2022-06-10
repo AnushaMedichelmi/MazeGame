@@ -1245,7 +1245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabsToPool:
   - prefab: {fileID: 8698332304428702884, guid: 97d872849af1e8641b5c119ba66af371, type: 3}
-    initialCapacity: 10
+    initialCapacity: 100
   - prefab: {fileID: 6402563268297134848, guid: 557b0a26f6a060e41bc834662368f827, type: 3}
     initialCapacity: 20
 --- !u!1 &983486636
